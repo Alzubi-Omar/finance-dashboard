@@ -91,35 +91,76 @@ export const seedTransactions: Transaction[] = [
     date: "2025-06-20",
     createdAt: new Date().toISOString(),
   },
+  {
+    id: "11",
+    type: "income",
+    amount: 3500,
+    category: "income",
+    description: "Monthly salary",
+    date: "2025-05-01",
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: "12",
+    type: "expense",
+    amount: 1200,
+    category: "housing",
+    description: "Rent payment",
+    date: "2025-05-02",
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: "13",
+    type: "expense",
+    amount: 320,
+    category: "food",
+    description: "Groceries",
+    date: "2025-05-10",
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: "14",
+    type: "expense",
+    amount: 90,
+    category: "entertainment",
+    description: "Concerts",
+    date: "2025-05-15",
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: "15",
+    type: "income",
+    amount: 3500,
+    category: "income",
+    description: "Monthly salary",
+    date: "2025-04-01",
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: "16",
+    type: "expense",
+    amount: 1200,
+    category: "housing",
+    description: "Rent payment",
+    date: "2025-04-02",
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: "17",
+    type: "expense",
+    amount: 210,
+    category: "food",
+    description: "Groceries",
+    date: "2025-04-12",
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: "18",
+    type: "expense",
+    amount: 150,
+    category: "shopping",
+    description: "Clothing",
+    date: "2025-04-20",
+    createdAt: new Date().toISOString(),
+  },
 ];
-
-//
-
-const STORAGE_KEY = "finance_dashboard_transactions";
-
-export const storage = {
-  addTransaction(transaction: Transaction): Transaction[] {
-    const current = this.getTransactions();
-    const updated = [transaction, ...current];
-    this.setTransactions(updated);
-    return updated;
-  },
-
-  updateTransaction(updated: Transaction): Transaction[] {
-    const current = this.getTransactions();
-    const result = current.map((t) => (t.id === updated.id ? updated : t));
-    this.setTransactions(result);
-    return result;
-  },
-
-  deleteTransaction(id: string): Transaction[] {
-    const current = this.getTransactions();
-    const result = current.filter((t) => t.id !== id);
-    this.setTransactions(result);
-    return result;
-  },
-
-  clearAll(): void {
-    localStorage.removeItem(STORAGE_KEY);
-  },
-};
