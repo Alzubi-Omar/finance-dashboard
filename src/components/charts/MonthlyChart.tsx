@@ -28,12 +28,12 @@ export default function MonthlyChart({ data }: Props) {
       <BarChart data={data} barGap={4}>
         <XAxis
           dataKey="label"
-          tick={{ fill: "#71717a", fontSize: 12 }}
+          tick={{ fill: "#94a3b8", fontSize: 12 }}
           axisLine={false}
           tickLine={false}
         />
         <YAxis
-          tick={{ fill: "#71717a", fontSize: 11 }}
+          tick={{ fill: "#94a3b8", fontSize: 11 }}
           axisLine={false}
           tickLine={false}
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -71,7 +71,7 @@ export default function MonthlyChart({ data }: Props) {
         <Bar
           dataKey="savings"
           name="Savings"
-          fill="#6366f1"
+          fill="#3b82f6"
           radius={[4, 4, 0, 0]}
         />
       </BarChart>

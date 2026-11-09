@@ -2,14 +2,14 @@ import { PieChart, Pie, Tooltip, ResponsiveContainer, Legend } from "recharts";
 import { formatCurrency } from "@/lib/formatters";
 
 const COLORS = [
-  "#6366f1", // indigo
   "#10b981", // emerald
+  "#3b82f6", // blue
   "#f59e0b", // amber
-  "#ef4444", // red
   "#8b5cf6", // violet
   "#06b6d4", // cyan
   "#f97316", // orange
   "#ec4899", // pink
+  "#6366f1", // indigo
 ];
 
 interface Props {

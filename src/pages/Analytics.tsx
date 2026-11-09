@@ -3,13 +3,24 @@ import { useAnalytics } from "@/hooks/useAnalytics";
 import MonthlyChart from "@/components/charts/MonthlyChart";
 import CategoryTable from "@/components/ui/CategoryTable";
 import ChangeBadge from "@/components/ui/ChangeBadge";
+import { ChartSkeleton, StatCardSkeleton } from "@/components/ui/Skeleton";
 
 export default function Analytics() {
   const { transactions, isLoading } = useTransactions();
   const { monthlyData, categoryTotals, expenseChange, incomeChange } =
     useAnalytics(transactions);
 
-  if (isLoading) return <p className="text-zinc-500 text-sm">Loading...</p>;
+  if (isLoading)
+    return (
+      <div className="space-y-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <StatCardSkeleton />
+          <StatCardSkeleton />
+        </div>
+        <ChartSkeleton />
+        <ChartSkeleton />
+      </div>
+    );
 
   return (
     <div className="space-y-8">
