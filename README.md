@@ -4,25 +4,36 @@ A data-heavy React + TypeScript application for tracking personal finances, visu
 
 ## Status
 
-🚧 Currently in active development.
+🚧 In active development — core features complete, now adding testing and deeper analytics.
+
+## Features
+
+- ✅ Dashboard with monthly spending summary and category breakdown
+- ✅ Transaction management (add, edit, delete) with React Hook Form + Zod validation
+- ✅ Analytics page — monthly bar chart and category breakdown (Recharts)
+- ✅ Skeleton loading states and reusable UI components (modal, stat cards, change badges)
+- ✅ Data layer — storage helper, seed data, formatters
+- ✅ Local persistence via localStorage
 
 ## Tech Stack
 
-- **React 18** + **TypeScript** — component architecture and type safety
+- **React 18 + TypeScript** — component architecture and type safety
 - **Vite** — build tooling
 - **TanStack Query** — server state and data management
-- **React Hook Form** + **Zod** — form handling and schema validation
+- **React Hook Form + Zod** — form handling and schema validation
 - **Recharts** — data visualization and charts
 - **Tailwind CSS** — styling
 - **React Router** — client-side routing
 
-## Planned Features
+## Roadmap
 
-- Dashboard with monthly spending summary and category breakdown
-- Full transaction CRUD (add, edit, delete)
-- Spending trends and category analytics
-- Budget tracking with savings progress
-- Local persistence via localStorage
+- [ ] Unit and component tests (Vitest + React Testing Library)
+- [ ] Budget tracking with savings-goal progress
+- [ ] CSV import/export of transactions
+- [ ] Recurring transactions
+- [ ] Code-split routes with React.lazy to reduce bundle size
+- [ ] Dark mode
+- [ ] Deploy to Netlify with a live demo link
 
 ## Local Setup
 
