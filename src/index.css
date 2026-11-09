@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+:root {
+  --color-base: #0a0f1e;
+  --color-surface: #111827;
+  --color-surface-2: #1a2235;
+  --color-border: #1f2d45;
+  --color-accent: #10b981;
+  --color-accent-hover: #059669;
+}

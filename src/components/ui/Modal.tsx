@@ -27,8 +27,10 @@ export default function Modal({ title, children, onClose }: Props) {
 
       {/* Panel */}
       <div
-        className="relative w-full max-w-md bg-zinc-900 border border-zinc-800
-                   rounded-2xl shadow-2xl p-6"
+        className="relative w-full max-w-md rounded-2xl shadow-2xl p-6 border border-slate-700/50"
+        style={{
+          background: "linear-gradient(135deg, #111827 0%, #1a2235 100%)",
+        }}
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between mb-6">

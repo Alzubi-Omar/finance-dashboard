@@ -104,9 +104,9 @@ export default function TransactionForm({
           step="0.01"
           placeholder="0.00"
           {...register("amount", { valueAsNumber: true })}
-          className="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-3 py-2.5
+          className="w-full bg-slate-800/80 border border-slate-600 rounded-lg px-3 py-2.5
                      text-zinc-100 text-sm font-mono placeholder-zinc-600
-                     focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+                     focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
         />
         {errors.amount && (
           <p className="text-red-400 text-xs mt-1">{errors.amount.message}</p>
@@ -177,7 +177,7 @@ export default function TransactionForm({
         <button
           type="submit"
           disabled={isSubmitting}
-          className="flex-1 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-50
+          className="flex-1 bg-emerald-600 hover:bg-emerald-500 disabled:opacity-50
                      text-white text-sm font-medium py-2.5 rounded-lg transition-colors"
         >
           {isSubmitting
@@ -189,7 +189,7 @@ export default function TransactionForm({
         <button
           type="button"
           onClick={onCancel}
-          className="flex-1 bg-zinc-800 hover:bg-zinc-700 text-zinc-300
+          className="flex-1 bg-slate-800 hover:bg-slate-700 text-slate-300
                      text-sm font-medium py-2.5 rounded-lg transition-colors"
         >
           Cancel
