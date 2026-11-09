@@ -6,6 +6,7 @@ import { formatCurrency, formatDate } from "@/lib/formatters";
 import Modal from "@/components/ui/Modal";
 import TransactionForm from "@/components/ui/TransactionForm";
 import ConfirmDelete from "@/components/ui/ConfirmDelete";
+import { TableSkeleton } from "@/components/ui/Skeleton";
 
 type ModalState =
   | { mode: "closed" }
@@ -50,7 +51,7 @@ export default function Transcations() {
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
   );
 
-  if (isLoading) return <p className="text-zinc-500 text-sm">Loading...</p>;
+  if (isLoading) return <TableSkeleton />;
 
   return (
     <div className="space-y-6">
@@ -73,7 +74,12 @@ export default function Transcations() {
 
       {/* Table */}
       {sorted.length === 0 ? (
-        <div className="bg-zinc-900 border border-zinc-800 rounded-xl p-12 text-center">
+        <div
+          className="rounded-xl overflow-hidden border border-slate-700/50"
+          style={{
+            background: "linear-gradient(135deg, #111827 0%, #1a2235 100%)",
+          }}
+        >
           <p className="text-zinc-500 text-sm">No transactions yet.</p>
           <button
             onClick={() => setModal({ mode: "add" })}
@@ -83,7 +89,12 @@ export default function Transcations() {
           </button>
         </div>
       ) : (
-        <div className="bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden">
+        <div
+          className="rounded-xl p-12 text-center border border-slate-700/50"
+          style={{
+            background: "linear-gradient(135deg, #111827 0%, #1a2235 100%)",
+          }}
+        >
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-zinc-800">
@@ -106,13 +117,13 @@ export default function Transcations() {
               {sorted.map((t) => (
                 <tr
                   key={t.id}
-                  className="hover:bg-zinc-800/50 transition-colors"
+                  className="hover:bg-slate-700/20 transition-colors"
                 >
                   <td className="px-6 py-4 text-zinc-200 font-medium">
                     {t.description}
                   </td>
                   <td className="px-6 py-4">
-                    <span className="text-xs bg-zinc-800 text-zinc-400 px-2 py-1 rounded-md capitalize">
+                    <span className="text-xs bg-slate-700 text-slate-400 px-2 py-1 rounded-md capitalize">
                       {t.category}
                     </span>
                   </td>
