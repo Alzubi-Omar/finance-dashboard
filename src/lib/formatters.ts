@@ -16,10 +16,11 @@ export function formatDate(dateStr: string): string {
 }
 
 export function formatMonth(dateStr: string): string {
+  const [year, month] = dateStr.split("-").map(Number);
   return new Intl.DateTimeFormat("en-US", {
     month: "long",
     year: "numeric",
-  }).format(new Date(dateStr));
+  }).format(new Date(year, month - 1, 1));
 }
 
 export function getMonthKey(dateStr: string): string {
