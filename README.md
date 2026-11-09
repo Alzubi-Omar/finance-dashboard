@@ -27,7 +27,7 @@ A data-heavy React + TypeScript application for tracking personal finances, visu
 
 ## Roadmap
 
-- [ ] Unit and component tests (Vitest + React Testing Library)
+- [x] Unit tests for formatters (Vitest) — component tests next
 - [ ] Budget tracking with savings-goal progress
 - [ ] CSV import/export of transactions
 - [ ] Recurring transactions
